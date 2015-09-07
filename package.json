@@ -1,0 +1,34 @@
+{
+  "name": "PolyEdit",
+  "version": "1.0.0",
+  "description": "Alternative to Physics Editor for creating JSON physics file output",
+  "main": "./dist/templates/index.html",
+  "author": "Jack Guy",
+  "window": {
+    "title": "PolyEdit",
+    "toolbar": false,
+    "width": 1000,
+    "height": 600,
+    "min_width": 900,
+    "min_height": 400,
+    "icon": "icon.png"
+  },
+  "devDependencies": {
+    "coffee-script": "^1.9.3",
+    "enigmavirtualbox": "^0.9.3",
+    "gulp": "^3.9.0",
+    "gulp-coffee": "^2.3.1",
+    "gulp-jade": "^1.0.1",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-stylus": "^2.0.5",
+    "gulp-util": "^3.0.6",
+    "gulp-watch": "^4.3.3",
+    "gutil": "^1.6.4",
+    "nib": "^1.1.0",
+    "nw-builder": "^2.0.1"
+  },
+  "dependencies": {
+    "body-parser": "^1.13.2",
+    "walk": "^2.3.9"
+  }
+}

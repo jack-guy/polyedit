@@ -1,0 +1,24 @@
+doctype html
+
+style.
+   body {
+      background-color: #F0F0F0;
+      text-align: center;
+      font-size: 16px;
+      padding-top: 3px
+   }
+   p {
+      font-family: Arial;
+   }
+   button {
+      margin-right: 10px;
+      padding: 5px 15px;
+   }
+
+script.
+   var gui = require('nw.gui')
+
+p Want to save your changes?
+button(onclick='global.confirmStatus=1;gui.Window.get().close()') Save
+button(onclick='global.confirmStatus=-1;gui.Window.get().close()') Don't Save
+button(onclick='global.confirmStatus=0;gui.Window.get().close()') Cancel

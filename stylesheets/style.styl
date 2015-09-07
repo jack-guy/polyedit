@@ -1,0 +1,254 @@
+@import 'loader.css'
+
+*
+   -webkit-touch-callout: none;
+   -webkit-user-select: none;
+   -khtml-user-select: none;
+   -moz-user-select: none;
+   -ms-user-select: none;
+   user-select: none;
+
+html, body
+   height: 100%
+   overflow: hidden
+
+#menu
+   border-bottom: solid 1px #d0d0d0
+   box-sizing: border-box
+   overflow: hidden
+   padding: 5px
+   background-color: #fff;
+   position: relative;
+   z-index: 20;
+
+   .handler
+      display: none
+
+   .project
+      float: left
+      margin-right: 20px
+
+   .sprites
+      float: left
+
+   .btn
+      margin-right: 5px
+
+      i
+         margin-right: 5px
+         font-size: 28px;
+         margin-bottom: 3px;
+
+      .text-label
+         font-size: 12px;
+
+.bottom
+   height: calc(100% - 73px)
+
+   .left
+      height: 100%
+      width: 300px;
+      border-right: solid 1px #d0d0d0
+      background-color: #fff;
+      float: left;
+      z-index: 10
+      position: relative
+
+      #sprites
+         height: 100%
+         width: inherit
+
+         .top-stuff
+            height: 90px
+            border-bottom: solid 1px #d0d0d0
+
+            .search-sprites
+               margin-bottom: 35px;
+
+               .col-sm-8
+                  padding: 0px
+
+               .col-sm-4
+                  padding: 0px
+                  padding-left: 10px
+
+                  .control-label
+                     margin-top: 6px;
+
+                  input[type='checkbox']
+                     vertical-align: text-bottom;
+                     margin-bottom: 1px;
+                     margin-left: 5px
+
+         .content
+            overflow-y: auto
+            height: calc(100% - 90px)
+
+         .list-group
+            margin: 0px
+
+         .list-group-item
+            padding: 10px
+            overflow: hidden
+            border: solid 1px #E4E4E4
+
+            &:first-of-type
+               border-top: none
+
+            &.activeSprite:not(.editor)
+               background-color: #EDF6FF
+
+            &.editor
+               background-color: #5AABFF
+               .title
+                  color: #fff
+               .path
+                  color: #e0e0e0
+
+            .list-group-item-float
+               float: left
+               &:first-of-type
+                  margin-right: 5px
+                  height: 32px
+                  width: 32px
+
+            .icon
+               max-width: 32px
+               max-height: 32px
+            .title
+               font-weight: bold
+
+            .path
+               width: calc(100% - 50px)
+               white-space: nowrap
+               overflow: hidden
+               text-overflow: ellipsis
+
+      // #files
+      //    overflow: auto
+      //
+      //    .list-group-item
+      //       padding: 5px 5px
+
+   .list-group .list-group-item
+      border-radius: 0px;
+      border: solid 1px #fff;
+
+
+   #editor
+      float: left;
+      width: calc(100% - 600px)
+      height: 100%
+      position: relative
+
+      .canvas
+         width: 200px
+         height: 200px
+         display: none
+         border: solid 2px rgba(#000000, 0.8)
+         box-shadow: 0px 0px 10px 0px rgba(#000000, 0.5)
+
+         image-rendering: pixelated;
+         background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAGElEQVQIW2PcvXv3f1dXV0ZGBgYGBhAHAEJ/BzO9HhLzAAAAAElFTkSuQmCC');
+         background-size: 20px 20px;
+
+         position: absolute
+         z-index: 2
+         left: 50%;
+         top: calc(50% - 22.5px)
+         transform: translate(-50%, -50%);
+
+         .sprite-image
+            image-rendering: pixelated;
+            position: absolute;
+            top: 0px;
+
+         svg
+            position: absolute;
+            z-index: 10;
+
+            polygon
+               stroke: #000
+               stroke-width: 2px
+               stroke-linecap: round
+               stroke-linejoin: round
+
+               &.focused
+                  fill: rgba(40, 96, 144, 0.4)
+               &:not(.focused)
+                  fill: rgba(0, 0, 0, 0.4)
+      #status
+         width: 100%
+         bottom: 0px
+         height: 45px
+         padding: 5px;
+         position: absolute
+         border-top: solid 1px #d0d0d0
+
+         .tools
+            display: none
+            float: left
+
+            .btn
+               margin-right: 5px
+
+            .polygon-button i
+               transform: rotate(30deg) translate(2px, 1px)
+
+            .shape-operations
+               display: none
+
+         .zoom
+            float: right
+            font-weight: bold
+
+            div
+               margin-top: 2px
+               padding: 5px 10px
+               float: left
+
+            input
+               float: left
+               width: 60px;
+               padding-right: 0px;
+
+   #properties
+      background-color: #fff;
+      height: 100%
+      width: 300px;
+      float: left;
+      border-left: solid 1px #d0d0d0
+      z-index: 10
+      position:relative
+      right: 0px
+
+   .header
+      background-color: #d0d0d0;
+      font-weight: bold;
+      text-align: center;
+      font-size: 16px;
+      padding: 6px 0px;
+      position: relative
+
+      .loader
+         position: absolute
+         right: 10px;
+         top: 7px;
+         display none
+
+   .sub-header
+      font-size: 12px;
+      border-top: solid 1px #d0d0d0
+      border-bottom: solid 1px #d0d0d0
+      font-weight: bold;
+      text-align: center;
+      padding: 6px 0px;
+
+   .form-group
+      padding: 10px
+
+#layout
+   height: 100%
+
+#svg polygon
+   cursor: move
